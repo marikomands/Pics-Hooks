@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+const SearchBar = ({ onSubmit }) => {
   const [term, setTerm] = useState("");
   console.log(term);
 
   const onFormSubmit = (event) => {
-    event.defaultPrevented();
-    props.onSubmit(term);
+    event.preventDefault();
+    console.log("🚀 ~ onFormSubmit ~ onFormSubmit");
+    onSubmit(term);
   };
 
   return (
@@ -18,7 +19,9 @@ const SearchBar = (props) => {
           className="input"
           value={term}
           type="text"
-          onChange={(e) => setTerm(e.target.value)}
+          onChange={(e) => {
+            setTerm(e.target.value);
+          }}
         />
       </form>
     </div>
