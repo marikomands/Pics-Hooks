@@ -1,0 +1,21 @@
+.body {
+  width: 100%;
+}
+
+.image-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: stretch; */
+  /* justify-content: center; */
+}
+
+.image-list img {
+  width: 30%;
+  margin: 5px 1%;
+  /* height: auto; */
+  /* margin: 0 5px 0 0; */
+  /* padding: 5px; */
+  align-self: center;
+}
